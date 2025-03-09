@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("nutrition/", include("core.urls")),  # Ensures "nutrition/" prefix
+    path("", include("core.urls")), 
 ]

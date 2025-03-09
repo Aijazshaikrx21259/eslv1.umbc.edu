@@ -138,18 +138,21 @@ def upload_nutrition_file(request):
     return JsonResponse({"error": "No file uploaded"}, status=400)
 
 @csrf_exempt
-def get_digital_nutrition(request, app_name):
+def get_digital_nutrition(request, device_id, app_id):
     """
-    Retrieve the digital nutrition facts for a given app.
+    Retrieve the digital nutrition facts for a given app running on a specific device.
     """
     try:
-        # Get App Data
-        app = App.objects.get(app_name=app_name)
+        # Get the Device
+        device = Device.objects.get(id=device_id)
 
-        # Get Latest Usage Stats
-        usage_stats = UsageStats.objects.filter(device__id=1).order_by("-timestamp").first()  # Assume Device ID 1 for now
+        # Get the App
+        app = App.objects.get(id=app_id)
 
-        # Get Permissions & Privacy Info
+        # Get Latest Usage Stats for the Specific Device
+        usage_stats = UsageStats.objects.filter(device=device).order_by("-timestamp").first()
+
+        # Get Permissions & Privacy Info for the App
         data_permissions = DataPermissions.objects.filter(app=app).first()
 
         # Calculate Battery Impact Per Hour
@@ -165,6 +168,7 @@ def get_digital_nutrition(request, app_name):
 
         # Prepare JSON Response
         response_data = {
+            "Device Name": f"{device.device_make} {device.device_model}",
             "App Name": app.app_name,
             "Version": app.app_version,
             "Evaluated On": datetime.now().strftime("%Y-%m-%d"),
@@ -202,6 +206,8 @@ def get_digital_nutrition(request, app_name):
 
         return JsonResponse(response_data, status=200, json_dumps_params={'indent': 4})
 
+    except Device.DoesNotExist:
+        return JsonResponse({"error": "Device not found"}, status=404)
     except App.DoesNotExist:
         return JsonResponse({"error": "App not found"}, status=404)
     except Exception as e:
