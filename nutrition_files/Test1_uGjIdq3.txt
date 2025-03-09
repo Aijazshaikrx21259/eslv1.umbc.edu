@@ -1,0 +1,58 @@
+Name:
+Date: 2024-11-05
+Time:
+Device Make: Apple
+Device Model: iPhone 14
+Device State: Dirty
+OS Name: iOS
+OS Version: 17.0.2
+OS Release Date: 2024-09-15
+App Name: Health
+App Version: 2.3.5
+Version Release Date: 2024-10-01
+Developer: Apple Inc.
+App Category: Health & Fitness
+Review Score: 4.8 out of 5
+Recommended Age Range: 12+
+Ranking in Category: #2 in Health & Fitness
+Installation Size: 320 MB
+Data Collected (Linked to You): [Name, Health and Fitness Data, Location Data, Device ID]
+Data Collected (Not Linked to You):[Performance Data, Diagnostics Information, General Location Data (city-level), Interaction Data]
+Permissions Asked For: [Location, Health Data, Notifications ]
+Permissions Granted: [Location, Health Data, Notifications]
+Device Usage at 0 Minutes
+Battery (%): 98%
+CPU: 7%
+Threads: Estimated 90
+Memory: 2.0 GB
+Storage: 85 GB available
+I/O: Wi-Fi: 2.1 MB received / 500 KB sent
+Network Types: Wi-Fi
+Access Information: [Location, Health Data]
+Device Usage at 10 Minutes
+Battery (%): 96%
+CPU: 8%
+Threads: Estimated 92
+Memory: 2.1 GB
+Storage: 85 GB available
+I/O: Wi-Fi: 2.3 MB received / 650 KB sent
+Network Types: Wi-Fi
+Access Information: [Location, Health Data]
+Device Usage at 20 Minutes
+Battery (%): 94%
+CPU: 9%
+Threads: Estimated 88
+Memory: 2.2 GB
+Storage: 85 GB available
+I/O: Wi-Fi: 2.5 MB received / 700 KB sent
+Network Types: Wi-Fi
+Access Information: [Location, Health Data]
+Device Usage at 30 Minutes
+Battery (%): 92%
+CPU: 7%
+Threads: Estimated 89
+Memory: 2.0 GB
+Storage: 85 GB available
+I/O: Wi-Fi: 2.7 MB received / 800 KB sent
+Network Types: Wi-Fi
+Access Information: [Location, Health Data]
