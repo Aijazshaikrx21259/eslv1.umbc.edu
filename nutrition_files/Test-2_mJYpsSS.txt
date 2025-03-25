@@ -1,0 +1,57 @@
+Name: Abey Rajan
+Date: 2024-12-03
+Time: 9:56 AM
+Device Make: Realme
+Device Model: Dirty
+OS Name: Android
+OS Version: 11
+OS Release Date: 2020-09-08
+App Name: Google Wallet
+App Version: 111
+Version Release Date: 2024-12-02
+Developer: Google LLC
+App Category: Digital Wallet
+Review Score: 4.5 out of 5
+Recommended Age Range: 16+
+Ranking in Category: #8
+Installation Size: 122 MB
+Data Collected (Linked to You): [Name, Email Address, Phone Number, Address, Location Data, Photos and Videos, Audio Data, Financial Information, Payment Information, Purchase History]
+Data Collected (Not Linked to You): [App Crash Data, Performance Data, Device Information (e.g., model, OS version), General Location Data (e.g., city-level location), Usage Data (e.g., time spent in app, features accessed), Diagnostics Information, Network Information, IP Address]
+Permissions Asked For: [Location, Storage, Financial Data, User ID]
+Permissions Granted: [Location, Camera, Financial Data]
+Device Usage at 0 Minutes
+Battery (%): 95%
+CPU: 825 MHz
+Threads: Estimated 3
+Memory: 3823 MB
+Storage: 40.0 MB available
+I/O: Wi-Fi: 338.59 KB received / 100.5 KB sent
+Network Types: Wi-Fi, Cellular
+Access Information: [Location, Storage]
+Device Usage at 10 Minutes
+Battery (%): 87%
+CPU: 1708 MHz
+Threads: Estimated 6
+Memory: 3952 MB
+Storage: 40.3 MB available
+I/O: Wi-Fi: 609 KB received / 120.94 KB sent
+Network Types: Wi-Fi, Cellular
+Access Information: [Location, Contacts, Calendar, Storage]
+Device Usage at 20 Minutes
+Battery (%): 85%
+CPU: 1132 MHz
+Threads: Estimated 5
+Memory: 3854 MB
+Storage: 40.3 MB available
+I/O: Wi-Fi: 617 KB received / 127.42 KB sent
+Network Types: Wi-Fi, Cellular
+Access Information: [Location, Contacts, Calendar, Storage]
+Device Usage at 30 Minutes
+Battery (%): 82%
+CPU: 652 MHz
+Threads: Estimated 2
+Memory: 3761 MB
+Storage: 40.3 MB available
+I/O: Wi-Fi: 626.06 KB received / 128.38 KB sent
+Network Types: Wi-Fi, Cellular
+Access Information: [Location, Contacts, Calendar, Storage]

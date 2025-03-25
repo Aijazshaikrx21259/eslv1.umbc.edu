@@ -22,7 +22,7 @@ class App(models.Model):
     developer = models.CharField(max_length=255)
     category = models.CharField(max_length=100)
     review_score = models.FloatField()
-    ranking_in_category = models.IntegerField()
+    ranking_in_category = models.IntegerField(null=True, blank=True)
     installation_size = models.CharField(max_length=50)
     recommended_age_range = models.CharField(max_length=50, default="Not Available")
 
@@ -63,3 +63,18 @@ class DataPermissions(models.Model):
 
     def __str__(self):
         return f"Permissions for {self.app.app_name} ({self.app.app_version})"
+class PolicyDocument(models.Model):
+    DOCUMENT_TYPES = [
+        ('tos', 'Terms of Service'),
+        ('privacy', 'Privacy Policy'),
+    ]
+
+    document_type = models.CharField(max_length=10, choices=DOCUMENT_TYPES)
+    title = models.CharField(max_length=255)
+    upload = models.FileField(upload_to='policy_documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    extracted_text = models.TextField(blank=True, null=True)  # optional extracted full text
+    summary = models.TextField(blank=True, null=True)         # summary generated later
+
+    def __str__(self):
+        return f"{self.get_document_type_display()} - {self.title}"

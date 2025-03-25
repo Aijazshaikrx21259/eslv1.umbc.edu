@@ -1,11 +1,17 @@
 import re
 import json
+import nltk
+
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from datetime import datetime
 from .models import Device, App, UsageStats, DataPermissions
+from .models import PolicyDocument
+from django.shortcuts import get_object_or_404
+from .utils import extract_text_from_pdf, extract_text_from_docx, generate_summary
+
 
 def parse_nutrition_data(file_content):
     """
@@ -86,7 +92,7 @@ def upload_nutrition_file(request):
         )
 
         # ✅ Step 2: Insert or Retrieve App Information
-        
+
 # Extract numeric value from ranking (e.g., "#2 in Health & Fitness" → 2)
         ranking_value = parsed_entry.get("Ranking in Category", "")
         ranking_numeric = int(re.search(r"\d+", ranking_value).group()) if re.search(r"\d+", ranking_value) else None
@@ -212,3 +218,55 @@ def get_digital_nutrition(request, device_id, app_id):
         return JsonResponse({"error": "App not found"}, status=404)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+
+
+
+@csrf_exempt
+def upload_policy_document(request):
+    if request.method == "POST":
+        document_type = request.POST.get("document_type")  # 'tos' or 'privacy'
+        uploaded_file = request.FILES.get("file")
+
+        if not uploaded_file or not document_type:
+            return JsonResponse({"error": "Missing file or document_type"}, status=400)
+
+        try:
+            if uploaded_file.name.endswith(".pdf"):
+                text = extract_text_from_pdf(uploaded_file)
+            elif uploaded_file.name.endswith(".docx"):
+                text = extract_text_from_docx(uploaded_file)
+            else:
+                return JsonResponse({"error": "Unsupported file type"}, status=400)
+        except Exception as e:
+            return JsonResponse({"error": f"Failed to extract text: {str(e)}"}, status=500)
+        nltk.data.path.append("C:/Users/abeyr/AppData/Roaming/nltk_data")
+        summary = generate_summary(text)
+        # Save to DB
+        document = PolicyDocument.objects.create(
+            document_type=document_type,
+            title=uploaded_file.name,
+            upload=uploaded_file,
+            extracted_text=text,
+            summary=summary
+        )
+
+        return JsonResponse({"message": "Document uploaded and text extracted successfully", "document_id": document.id}, status=201)
+
+    return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
+
+
+@csrf_exempt
+def get_policy_document(request, document_id):
+    if request.method == "GET":
+        document = get_object_or_404(PolicyDocument, id=document_id)
+        response = {
+            "id": document.id,
+            "type": document.get_document_type_display(),
+            "title": document.title,
+            "uploaded_at": document.uploaded_at.strftime("%Y-%m-%d %H:%M:%S"),
+            "file_path": document.upload.url,
+            "summary": document.summary
+        }
+        return JsonResponse(response, status=200, json_dumps_params={'indent': 4})
+    return JsonResponse({"error": "Only GET method allowed"}, status=405)

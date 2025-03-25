@@ -1,0 +1,57 @@
+Name: Abey Rajan
+Date: 2024-11-07
+Time: 4:52 PM
+Device Make: Realme
+Device Model: Dirty
+OS Name: Android
+OS Version: 11
+OS Release Date: 2020-09-08
+App Name: Camera
+App Version: 3.1.0_dc87538_220331
+Version Release Date: 2022-09-20
+Developer: N/A
+App Category: Photography / Videography
+Review Score: 4.5 out of 5
+Recommended Age Range: 4+
+Ranking in Category: 1
+Installation Size: 8.6 MB
+Data Collected (Linked to You): [Photos and Videos, User Content (e.g., messages, photos, videos), Diagnostics Information]
+Data Collected (Not Linked to You): [App Crash Data, Performance Data, Device Information (e.g., model, OS version), Usage Data (e.g., time spent in app, features accessed), Diagnostics Information]
+Permissions Asked For: [Camera, Microphone, Storage, Location, Call Logs]
+Permissions Granted: [Camera, Microphone, Storage, Call Logs]
+Device Usage at 0 Minutes
+Battery (%): 41%
+CPU: 1708 MHz
+Threads: Estimated 8
+Memory: 3310 MB
+Storage: 8.6 MB available
+I/O: Wi-Fi: 0.13 MB/sec
+Network Types: Wi-Fi
+Access Information: [Camera, Microphone, Contacts, Storage]
+Device Usage at 10 Minutes
+Battery (%): 34%
+CPU: 1708 MHz
+Threads: Estimated 6
+Memory: 3367 MB
+Storage: 8.6 MB available
+I/O: Wi-Fi: 0.13 KB/sec
+Network Types: Wi-Fi
+Access Information: [Camera, Microphone, Contacts, Storage]
+Device Usage at 20 Minutes
+Battery (%): 27%
+CPU: 600 MHz
+Threads: Estimated 3
+Memory: 3466 MB
+Storage: 8.6 MB available
+I/O: Wi-Fi: 433 MB/sec
+Network Types: Wi-Fi
+Access Information: [Camera, Microphone, Contacts, Storage]
+Device Usage at 30 Minutes
+Battery (%): 15%
+CPU: 640 MHz
+Threads: Estimated 2
+Memory: 3540 MB
+Storage: 8.6 MB available
+I/O: Wi-Fi: 72 MB/sec
+Network Types: Wi-Fi
+Access Information: [Camera, Microphone, Contacts, Storage]
